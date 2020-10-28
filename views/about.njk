@@ -1,22 +1,22 @@
-{% extends "layout.html" %}
+{% extends "layout.njk" %}
 
 {% block head %}
-    <title> Sobre - Anderson Teala</title>
+    <title> Sobre - {{ about.name }}</title>
 {% endblock %}
 
 {% block content %}
 
 <div id="wrapper">
-    <img src="https://atnteala.sentidoconsultoria.com.br/wp-content/uploads/2020/05/69f162f4-6126-4c87-94dd-091a83a23f44-300x300-1.jpeg" alt="Anderson Teala">
-    <h1>Anderson Teala</h1>
-    <h2>Instrutor - Tecsec</h2>
-    <p>Programador full-stack, focado em trazer o melhor ensino para iniciantes em programação. Colaborador da <a href="https://atnteala.sentidoconsultoria.com.br/" target="_blank">Tecsec</a></p>
+    <img src="{{ about.avatar_url }}" alt="Imagem de {{ about.name }}">
+    <h1>{{ about.name }}</h1>
+    <h2>{{ about.role }}</h2>
+    <p>{{ about.description }}</p>
 </div>
 
 <div id="links-footer" class="links">
-    <a href="https://github.com/AndersonTeala" target="_blank">Github</a>
-    <a href="https://github.com/AndersonTeala" target="_blank">Instagram</a>
-    <a href="https://www.linkedin.com/in/anderson-teala-50a1a5167/" target="_blank">Linkedin</a>
+    {% for link in about.links %}
+    <a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+    {% endfor %}
 </div>
 
 {% endblock %}

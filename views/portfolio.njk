@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout.njk" %}
 
 {% block head %}
 
@@ -17,85 +17,20 @@
         </div>
 
         <section class="cards">
-            
-            <div class="card" id="XcU9GEUZTQA">
+            {% for item in items %}
+            <div class="card" id="{{item.id}}">
                 <div class="card__image-container">
-                    <img src="https://blogatnteala.sentidoconsultoria.com.br/wp-content/uploads/2020/10/1.png" alt="github">
+                    <img src="https://blogatnteala.sentidoconsultoria.com.br/wp-content/uploads/2020/10/1.png" alt="Imagem de {{item.price}}">
                 </div>
                 <div class="class_content">
-                    <p>Aprenda Git e Github na prática | Anderson Teala</p>
+                    <p>{{item.title}}</p>
                 </div>
                 <div class="card__info">
-                    <p>57 min</p>
-                    <p class="card__price">Free</p>
+                    <p>{{item.duration}}</p>
+                    <p class="card__price">{{item.price}}</p>
                 </div>
             </div>
-
-            <div class="card" id="XcU9GEUZTQA">
-                <div class="card__image-container">
-                    <img src="https://blogatnteala.sentidoconsultoria.com.br/wp-content/uploads/2020/10/css.png" alt="CSS">
-                </div>
-                <div class="class_content">
-                    <p>Aprenda CSS na prática | Anderson Teala</p>
-                </div>
-                <div class="card__info">
-                    <p>37 min</p>
-                    <p class="card__price">Free</p>
-                </div>
-            </div>
-
-            <div class="card" id="XcU9GEUZTQA">
-                <div class="card__image-container">
-                    <img src="https://blogatnteala.sentidoconsultoria.com.br/wp-content/uploads/2020/10/html.png" alt="html">
-                </div>
-                <div class="class_content">
-                    <p>Aprenda HTML 5 na prática | Anderson Teala</p>
-                </div>
-                <div class="card__info">
-                    <p>42 min</p>
-                    <p class="card__price">Free</p>
-                </div>
-            </div>
-
-            <div class="card" id="XcU9GEUZTQA">
-                <div class="card__image-container">
-                    <img src="https://blogatnteala.sentidoconsultoria.com.br/wp-content/uploads/2020/10/node.png" alt="node">
-                </div>
-                <div class="class_content">
-                    <p>Aprenda Node.JS na prática | Anderson Teala</p>
-                </div>
-                <div class="card__info">
-                    <p>37 min</p>
-                    <p class="card__price">Free</p>
-                </div>
-            </div>
-
-            <div class="card" id="XcU9GEUZTQA">
-                <div class="card__image-container">
-                    <img src="https://blogatnteala.sentidoconsultoria.com.br/wp-content/uploads/2020/10/5.png" alt="python">
-                </div>
-                <div class="class_content">
-                    <p>Aprenda Python na prática | Anderson Teala</p>
-                </div>
-                <div class="card__info">
-                    <p>77 min</p>
-                    <p class="card__price">Free</p>
-                </div>
-            </div>
-
-            <div class="card" id="XcU9GEUZTQA">
-                <div class="card__image-container">
-                    <img src="https://blogatnteala.sentidoconsultoria.com.br/wp-content/uploads/2020/10/react.png" alt="react">
-                </div>
-                <div class="class_content">
-                    <p>Aprenda React.JS na prática | Anderson Teala</p>
-                </div>
-                <div class="card__info">
-                    <p>57 min</p>
-                    <p class="card__price">Free</p>
-                </div>
-            </div>
-
+            {% endfor %}
         </section>
 
 
